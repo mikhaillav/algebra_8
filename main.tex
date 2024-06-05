@@ -1,0 +1,92 @@
+\documentclass[12pt, a4paper]{report}
+
+% Импорты 
+
+\usepackage{cmap}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{amsthm, amsmath, amssymb}
+\usepackage{thmtools}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage[normalem]{ulem}
+
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+
+% Геометрия 
+
+\usepackage{geometry}
+\geometry{
+	left=1.5cm,
+	right=1.5cm,
+	top=2cm,
+	bottom=1.5cm
+}
+
+\setlength\parindent{0pt}
+
+% Теоремы, леммы ...
+
+\renewcommand{\listtheoremname}{Список теорем}
+
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{corollary}[theorem]{Следствие}
+\theoremstyle{definition}
+\newtheorem*{definition}{Определение}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Замечание}
+\newtheorem{example}[theorem]{Пример}
+% Колонтитулы
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\rightmark}
+\fancyhead[L]{\textsc{\thechapter. \leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+% Главы
+
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries\centering} % Формат текста
+{\titlerule[1pt] \vspace{1pt} \titlerule\vspace{1pc} \Huge\MakeUppercase{\chaptertitlename} \thechapter} % Номер главы
+{1pc} % Отступ между номером главы и названием
+{\Huge} % Формат названия главы
+[\vspace{1pc} \titlerule] % Декоративные элементы после названия
+
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\newgeometry{left=1.5cm, right=1.5cm, top=3cm, bottom=2cm}
+		\centering
+		
+		{\Large Санкт-Петербургский губернаторский\\ Физико-математический лицей №30}\\[1cm]
+		\includegraphics[width=0.18\textwidth]{assets/logo.png}\\[5cm]
+		
+		\textbf{ \LARGE Конспект уроков алгебры 8-го класса}\\[2cm]
+		
+		\begin{flushright}
+			\textbf{Ученика:} \\ Лавелина М.Е. \\[1cm]
+			\textbf{По мотивам уроков:} \\ Ренёва О.В. \\[1cm]
+		\end{flushright}
+		
+		\vfill
+		
+		{\large 2023--2024 г.}
+		
+	\end{titlepage}
+	
+	\include{tex/contents.tex}	
+	\include{tex/chapter_1/chapter_1.tex}
+	\include{tex/chapter_2/chapter_2.tex}
+	
+
+\end{document}
+

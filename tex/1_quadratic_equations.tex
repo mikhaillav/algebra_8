@@ -1,0 +1,120 @@
+\chapter{Квадратные уравнения}
+
+\begin{definition}[Квадратное уравнение]
+	Квадратным уравнением называется уравнение вида $ax^2 + bx + c = 0$, где $a \neq 0$. 
+\end{definition}
+
+\section{Способы решения}
+
+\subsection{Удачные случаи}
+
+Если $b = 0$ и $c = 0$ то все довольно просто:
+
+\begin{align*}
+	& ax^2 = 0 \iff \\
+	& \left[\begin{array}{l}
+		a = 0 \text{ - так не бывает}\\
+		x^2 = 0
+	\end{array}\right. \iff \\
+	& x^2 = 0 \iff \\
+	& x = 0
+\end{align*}
+
+Если $b = 0$, а у $a$ и $c$ разные знаки (иначе у нас получится сумма двух положительных чисел которая не может быть равна нулю) то решаем так:
+
+\begin{align*}
+	& ax^2 - c = 0 \iff \\
+	& (\sqrt{a}x - \sqrt{c})(\sqrt{a}x + \sqrt{c}) \iff \\
+	& \left[\begin{array}{l}
+		\sqrt{a}x - \sqrt{c} = 0 \\
+		\sqrt{a}x + \sqrt{c} = 0
+	\end{array}\right. \iff \\
+	& \sqrt{a}x = \pm \sqrt{c} \iff \\
+	& x = \pm \sqrt{\frac{c}{a}}
+\end{align*}
+
+Если $c = 0$ то делаем так:
+
+\begin{align*}
+	& ax^2 + bx = 0 \iff \\
+	& x(ax + b) = 0 \iff \\
+	& \left[\begin{array}{l}
+		x = 0 \\
+		ax + b = 0
+	\end{array}\right. \iff \\
+	& \left[\begin{array}{l}
+		x = 0 \\
+		x = - \frac{b}{a}
+	\end{array}\right.  
+\end{align*}
+
+\newpage
+
+\subsection{Остальные случаи}
+
+В остальных случаях стоит воспользоваться следующими теоремами.
+
+\begin{theorem}[О решении квадратных уравнений]
+	Пусть имеется квадратное уравнение и \\ $D = b^2 - 4ac$. \\
+	Тогда утверждается, что если:
+	\begin{enumerate}
+		\item $D < 0$:
+			Уравнение не имеет решений.
+		\item $D = 0$:
+			$x = - \frac{b}{2a}$
+		\item $D > 0$:
+			$x = - \frac{b \pm \sqrt{D}}{2a}$
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{align*}
+		& ax^2 + bx + c = 0 \iff \\
+		& x^2 + \frac{bx}{a} + \frac{c}{a} = 0 \iff \\
+		& x^2 + 2 \frac{b}{2a} x + \frac{b^2}{4a^2} - \frac{b^2}{4a^2} + \frac{c}{a} = 0 \iff \\
+		& (x + \frac{b}{2a})^2 - (\frac{b^2}{4a^2} - \frac{c}{a}) = 0 \iff \\
+		& (x + \frac{b}{2a})^2 - \frac{b^2 - 4ac}{4a^2} = 0 \iff \\
+		& (x + \frac{b}{2a})^2 - \frac{D}{4a^2} = 0 \\
+	\end{align*}
+	
+	\begin{enumerate}
+		\item $D < 0$:
+		
+			Сумма неотрицательного $(x + \frac{b}{2a})^2$ и положительного -$\frac{D}{4a^2}$ числа не может быть равна нулю.
+			
+		\item $D = 0$:
+		
+			\begin{align*}
+				& (x + \frac{b}{2a})^2 = 0 \iff \\
+				& x + \frac{b}{2a} = 0 \iff \\
+				& x = - \frac{b}{2a}
+			\end{align*}
+			
+		\item $D > 0$:
+		
+			\begin{align*}
+				& (x + \frac{b}{2a} - \frac{\sqrt{D}}{2a})(x + \frac{b}{2a} + \frac{\sqrt{D}}{2a}) = 0 \iff \\
+				& x + \frac{b}{2a} \pm \frac{\sqrt{D}}{2a} = 0 \iff \\
+				& x = -\frac{b}{2a} \pm \frac{\sqrt{D}}{2a} \iff \\
+				& x = - \frac{b \pm \sqrt{D}}{2a}
+			\end{align*}
+	\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+ todo: написать формулировку прямой и обратной на мат языке
+
+\begin{theorem}[Виета]
+	Числа $x_1$, $x_2$ тогда и только тогда являются корнями квадратного уравнения, для них выполняются следующие соотношения:
+	$$
+	\left\{\begin{array}{l}
+		x_1 + x_2 = - \frac{b}{a} \\
+		x_1 * x_2 = \frac{c}{a}
+	\end{array}\right.
+	$$
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}

@@ -1,0 +1,124 @@
+\section{Импликация и эквиваленция}
+
+\begin{definition}[Импликация]
+	Импликацией высказываний $A$ и $B$ называется высказывание, обозначаемое $A \rightarrow B$, (произносится как <<если А то Б>>, <<А достаточно для Б>>), истинность которого определяется таблицей:
+	\begin{center}
+		\begin{tabular}{ |c|c|c| } 
+			\hline
+			$A$ & $B$ & $A \rightarrow B$ \\
+			\hline 
+			1 & 1 & 1 \\ 
+			1 & 0 & 0 \\
+			0 & 1 & 1 \\ 
+			0 & 0 & 1 \\  
+			\hline
+		\end{tabular}
+	\end{center}
+\end{definition}
+
+\begin{definition}[Эквиваленция]
+	Эквиваленцией высказываний $A$ и $B$ называется высказывание, обозначаемое $A \leftrightarrow B$, (произносится как <<А тогда и только тогда когда Б>>, <<А необходимо и достаточно для Б>>), истинность которого определяется таблицей:
+	\begin{center}
+		\begin{tabular}{ |c|c|c| } 
+			\hline
+			$A$ & $B$ & $A \leftrightarrow B$ \\
+			\hline 
+			1 & 1 & 1 \\ 
+			1 & 0 & 0 \\
+			0 & 1 & 0 \\ 
+			0 & 0 & 1 \\  
+			\hline
+		\end{tabular}
+	\end{center}
+\end{definition}
+
+\subsection{Свойства импликации}
+
+\begin{theorem}[Выражение через другие логические операции] \label{thm:1.3.1}
+	$A \rightarrow B = \overline{A} \lor B$
+\end{theorem}
+
+\begin{proof}
+	\hfill \break \break
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c| } 
+			\hline
+			$A$ & $B$ & $A \rightarrow B$ & $\neg A \lor B$ \\
+			\hline 
+			1 & 1 & 1 & 1 \\ 
+			1 & 0 & 0 & 0 \\
+			0 & 1 & 1 & 1 \\ 
+			0 & 0 & 1 & 1 \\  
+			\hline
+		\end{tabular}
+	\end{center}
+\end{proof}
+
+\begin{theorem}[Отрицание импликации]
+	$\overline{A \rightarrow B} = A \land \overline{B}$
+\end{theorem}
+
+\begin{proof}
+	Воспользуемся теоремой \ref{thm:1.3.1} выше, получаем, что
+	\begin{align*}
+		\overline{A \rightarrow B} = \overline{A} \lor B 
+	\end{align*}
+	Затем, используя теорему \ref{thm:1.2.4} (об отрицании конъюнкции), преобразуем в
+	\begin{align*}
+		\overline{A} \lor B = A \land \overline{B}
+	\end{align*} 
+	
+\end{proof}
+
+\newpage
+
+\begin{theorem}[Обоснование доказательства от противного]
+	$A \rightarrow B = \overline{B} \rightarrow \overline{A}$
+\end{theorem}
+
+\begin{proof}
+	\hfill \break \break
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c| } 
+			\hline
+			$A$ & $B$ & $A \rightarrow B$ & $\neg B \rightarrow \neg A$ \\
+			\hline 
+			1 & 1 & 1 & 1 \\ 
+			1 & 0 & 0 & 0 \\
+			0 & 1 & 1 & 1 \\ 
+			0 & 0 & 1 & 1 \\  
+			\hline
+		\end{tabular}
+	\end{center}
+\end{proof}
+
+\begin{theorem}[Транзитивность импликации]
+	\hfill \break
+	\begin{align*}
+		\left\{\begin{array}{l}
+			A \rightarrow B \\
+			B \rightarrow C
+		\end{array}\right. \rightarrow (A \rightarrow C)
+	\end{align*}
+\end{theorem}
+
+\begin{proof}
+	Для доказательства данного свойства нам важно показать, что импликация посередине (между системой и второй импликацией) будет выполняться всегда, то есть ее столбик будет заполнен единичками.
+	
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c| } 
+			\hline
+			$A$ & $B$ & $C$ & $\overbrace{(A \rightarrow B) \land (B \rightarrow C)}^{D}$ & $\overbrace{(A \rightarrow C)}^{E}$ & $D \rightarrow E$ \\
+			\hline 
+			1 & 1 & 1 & 1 & 1 & 1 \\ 
+			1 & 1 & 0 & 0 & 0 & 1 \\ 
+			1 & 0 & 1 & 0 & 1 & 1 \\ 
+			1 & 0 & 0 & 0 & 0 & 1 \\
+			0 & 1 & 1 & 1 & 1 & 1 \\ 
+			0 & 1 & 0 & 0 & 1 & 1 \\ 
+			0 & 0 & 1 & 1 & 1 & 1 \\ 
+			0 & 0 & 0 & 1 & 1 & 1 \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+\end{proof}

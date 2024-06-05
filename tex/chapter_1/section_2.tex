@@ -1,0 +1,270 @@
+\section{Конъюнкция, дизъюнкция, отрицание}
+
+\begin{definition}[Отрицание]
+	Отрицанием высказывания $A$ называется высказывание, обозначаемое $\overline A$, $\neg A$ (произносится как <<не А>>), истинность которого определяется таблицей:
+	\begin{center}
+		\begin{tabular}{ |c|c| } 
+			\hline
+			$A$ & $\neg A$ \\
+			\hline 
+			1 & 0 \\ 
+			0 & 1 \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+\end{definition}
+
+\begin{definition}[Конъюнкция]
+	Конъюнкцией высказываний $A$ и $B$ называется высказывание, обозначаемое $A \land B$, $A \& B$, значок фигурных скобок между $A$ и $B$ (произносится как <<А и Б>>), истинность которого определяется таблицей:
+	\begin{center}
+		\begin{tabular}{ |c|c|c| } 
+			\hline
+			$A$ & $B$ & $A \land B$ \\
+			\hline 
+			1 & 1 & 1 \\ 
+			1 & 0 & 0 \\
+			0 & 1 & 0 \\ 
+			0 & 0 & 0 \\  
+			\hline
+		\end{tabular}
+	\end{center}
+\end{definition}
+
+\begin{definition}[Дизъюнкция]
+	Дизъюнкцией высказываний  $A$ и $B$ называется высказывание, обозначаемое $A \lor B$, $\neg A$, значок квадратных скобок между $A$ и $B$(произносится как <<А или Б>>), истинность которого определяется таблицей:
+	\begin{center}
+		\begin{tabular}{ |c|c|c| } 
+			\hline
+			$A$ & $B$ & $A \lor B$ \\
+			\hline 
+			1 & 1 & 1 \\ 
+			1 & 0 & 1 \\
+			0 & 1 & 1 \\ 
+			0 & 0 & 0 \\  
+			\hline
+		\end{tabular}
+	\end{center}
+\end{definition}
+
+\subsection{Свойства конъюнкции, дизъюнкции, отрицания}
+
+\begin{remark}
+	Для доказательства различных свойств логических операций мы будем составлять таблицу истинности, то есть просто проверять, что при всех возможных значениях аргументов наше свойство будет верно (столбики будут совпадать).
+\end{remark}
+
+\begin{theorem}[Коммуникативность конъюнкции]
+	$A \land B = B \land A$
+\end{theorem}
+
+\begin{proof}
+	\hfill \break \break
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c| } 
+			\hline
+			$A$ & $B$ & $A \land B $ & $B \land A$ \\
+			\hline 
+			1 & 1 & 1 & 1 \\ 
+			1 & 0 & 0 & 0 \\
+			0 & 1 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 \\  
+			\hline
+		\end{tabular}
+	\end{center}
+\end{proof}
+
+\begin{theorem}[Ассоциативность конъюнкции]
+	$(A \land B) \land C = A \land (B \land C)$
+\end{theorem}
+
+\begin{proof}
+	\hfill \break \break
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c| } 
+			\hline
+			$A$ & $B$ & $C$ & $(A \land B) \land C$ & $A \land (B \land C)$ \\
+			\hline 
+			1 & 1 & 1 & 1 & 1 \\ 
+			1 & 1 & 0 & 0 & 0 \\ 
+			1 & 0 & 1 & 0 & 0 \\ 
+			1 & 0 & 0 & 0 & 0 \\
+			0 & 1 & 1 & 0 & 0 \\ 
+			0 & 1 & 0 & 0 & 0 \\ 
+			0 & 0 & 1 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+\end{proof}
+
+\begin{theorem}[Отрицание конъюнкции] \label{thm:1.2.4}
+	$\overline{A \land B} = \overline{A} \lor \overline{B}$
+\end{theorem}
+
+\begin{remark}
+	Отрицание обладает наивысшим приоритетом, оно выполняется раньше всех других логических операций. $(\neg A) \lor B$ тоже самое что и $\neg A \lor B$
+\end{remark}
+
+\begin{proof}
+	\hfill \break \break
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c| } 
+			\hline
+			$A$ & $B$ & $\neg (A \land B)$ & $\neg A \lor \neg B$ \\
+			\hline 
+			1 & 1 & 0 & 0 \\ 
+			1 & 0 & 1 & 1 \\
+			0 & 1 & 1 & 1 \\ 
+			0 & 0 & 1 & 1 \\  
+			\hline
+		\end{tabular}
+	\end{center}
+\end{proof}
+
+\newpage
+
+\begin{theorem}[Коммуникативность дизъюнкции]
+	$A \lor B = B \lor A$
+\end{theorem}
+
+\begin{proof}
+	\hfill \break \break
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c| } 
+			\hline
+			$A$ & $B$ & $A \lor B $ & $B \lor A$ \\
+			\hline 
+			1 & 1 & 1 & 1 \\ 
+			1 & 0 & 1 & 1 \\
+			0 & 1 & 1 & 1 \\ 
+			0 & 0 & 0 & 0 \\  
+			\hline
+		\end{tabular}
+	\end{center}
+\end{proof}
+
+\begin{theorem}[Ассоциативность дизъюнкции]
+	$(A \lor B) \lor C = A \lor (B \lor C)$
+\end{theorem}
+
+\begin{proof}
+	\hfill \break \break
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c| } 
+			\hline
+			$A$ & $B$ & $C$ & $(A \lor B) \lor C$ & $A \lor (B \lor C)$ \\
+			\hline 
+			1 & 1 & 1 & 1 & 1 \\ 
+			1 & 1 & 0 & 1 & 1 \\ 
+			1 & 0 & 1 & 1 & 1 \\ 
+			1 & 0 & 0 & 1 & 1 \\
+			0 & 1 & 1 & 1 & 1 \\ 
+			0 & 1 & 0 & 1 & 1 \\ 
+			0 & 0 & 1 & 1 & 1 \\ 
+			0 & 0 & 0 & 0 & 0 \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+\end{proof}
+
+\begin{theorem}[Отрицание дизъюнкции]
+	$\overline{A \lor B} = \overline{A} \land \overline{B}$
+\end{theorem}
+
+\begin{proof}
+	\hfill \break \break
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c| } 
+			\hline
+			$A$ & $B$ & $\neg (A \lor B)$ & $\neg A \land \neg B$ \\
+			\hline 
+			1 & 1 & 0 & 0 \\ 
+			1 & 0 & 0 & 0 \\
+			0 & 1 & 0 & 0 \\ 
+			0 & 0 & 1 & 1 \\  
+			\hline
+		\end{tabular}
+	\end{center}
+\end{proof}
+
+\newpage
+
+\begin{theorem}[Дистрибутивность конъюнкции относительно дизъюнкции]
+	\hfill \break
+	$A \land  (B \lor C) = (A \land B) \lor (A \land C)$
+\end{theorem}
+
+\begin{proof}
+	\hfill \break \break
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c| } 
+			\hline
+			$A$ & $B$ & $C$ & $A \land (B \lor C)$ & $(A \land B) \lor (A \land C)$ \\
+			\hline 
+			1 & 1 & 1 & 1 & 1 \\ 
+			1 & 1 & 0 & 1 & 1 \\ 
+			1 & 0 & 1 & 1 & 1 \\ 
+			1 & 0 & 0 & 0 & 0 \\
+			0 & 1 & 1 & 0 & 0 \\ 
+			0 & 1 & 0 & 0 & 0 \\ 
+			0 & 0 & 1 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+\end{proof}
+
+\begin{theorem}[Дистрибутивность дизъюнкции относительно конъюнкции]
+	\hfill \break
+	$A \lor  (B \land C) = (A \lor B) \land (A \lor C)$
+\end{theorem}
+
+\begin{proof}
+	\hfill \break \break
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c| } 
+			\hline
+			$A$ & $B$ & $C$ & $A \lor (B \land C)$ & $(A \lor B) \land (A \lor C)$ \\
+			\hline 
+			1 & 1 & 1 & 1 & 1 \\ 
+			1 & 1 & 0 & 1 & 1 \\ 
+			1 & 0 & 1 & 1 & 1 \\ 
+			1 & 0 & 0 & 1 & 1 \\
+			0 & 1 & 1 & 1 & 1 \\ 
+			0 & 1 & 0 & 1 & 1 \\ 
+			0 & 0 & 1 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+\end{proof}
+
+\begin{theorem}
+	$A \land A = A$
+\end{theorem}
+
+\begin{theorem}
+	$A \land 1 = A$
+\end{theorem}
+
+\begin{theorem}
+	$A \land 0 = 0$
+\end{theorem}
+
+\begin{theorem}
+	$A \lor A = A$
+\end{theorem}
+
+\begin{theorem}
+	$A \lor 1 = 1$
+\end{theorem}
+
+\begin{theorem}
+	$A \lor 0 = A$
+\end{theorem}
+
+\begin{theorem}[Закон двойного отрицания]
+	$\neg (\neg A) = A$
+\end{theorem}
+
+
+
