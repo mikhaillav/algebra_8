@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Install dependencies
-      run: apt install texlive-latex-extra texlive-lang-cyrillic texlive-fonts-recommended make
+      run: sudo apt install -y texlive-latex-extra texlive-lang-cyrillic texlive-fonts-recommended make
 
     - name: Build
       run: make && make # Latex needs at least 2 compilations to display TOC correctly.
