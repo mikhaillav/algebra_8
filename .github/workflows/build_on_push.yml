@@ -1,0 +1,26 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: sudo apt install -y texlive-latex-extra texlive-lang-cyrillic texlive-fonts-recommended make
+
+    - name: Build
+      run: make && make # Latex needs at least 2 compilations to display TOC correctly.
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v4.3.3
+      with:
+        name: main.pdf
+        path: build/main.pdf
+        retention-days: 90
+      
