@@ -1,0 +1,168 @@
+\section{Свойства теоретико-множественных операций}
+
+\begin{theorem}[Коммуникативность пересечения]
+    $A \cap B = B \cap A$
+\end{theorem}
+
+\begin{proof}
+    Воспользуемся теоремами математической логики из модуля \ref{subsec:1.2.1} и определением пересечения
+
+    \begin{align*}
+        & \sphericalangle \; x \in A \cap B \leftrightarrow \\
+        & x \in A \land x \in B \leftrightarrow \\
+        & x \in B \land x \in A \leftrightarrow \\
+        & x \in B \cap A \\
+    \end{align*}
+\end{proof}
+
+\begin{theorem}[Ассоциативность пересечения]
+    $A \cap (B \cap C) = (A \cap B) \cap C$
+\end{theorem}
+
+\begin{proof}
+    Воспользуемся теоремами математической логики из модуля \ref{subsec:1.2.1} и определением пересечения
+
+    \begin{align*}
+        & \sphericalangle \; x \in A \cap (B \cap C) \leftrightarrow \\
+        & x \in A \land x \in B \cap C \leftrightarrow \\
+        & x \in A \land x \in B \land x \in C \leftrightarrow \\
+        & (x \in A \land x \in B) \land x \in C \leftrightarrow \\
+        & x \in (A \cap B) \land x \in C \leftrightarrow \\
+        & x \in (A \cap B) \cap C \\
+    \end{align*}
+\end{proof}
+
+\begin{theorem}[Дистрибутивность пересечения относительно объединения]
+    \hfill \break \break
+    $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+\end{theorem}
+
+\begin{proof}
+    Воспользуемся теоремами математической логики из модуля \ref{subsec:1.2.1} и определениями пересечения с объединением
+
+    \begin{align*}
+        & \sphericalangle \; x \in A \cap (B \cup C) \leftrightarrow \\
+        & x \in A \land x \in B \cup C \leftrightarrow \\
+        & x \in A \land (x \in B \lor x \in C) \leftrightarrow \\
+        & (x \in A \land x \in B) \lor (x \in A \land x \in C) \leftrightarrow \\
+        & (x \in A \cap B) \lor (x \in A \cap C) \leftrightarrow \\
+        & x \in (A \cap B) \cup  (A \cap C) \\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\begin{theorem}[Вычитание пересечения]
+    $A \backslash (B \cap C) = (A \backslash B) \cup (A \backslash C)$
+\end{theorem}
+
+\begin{proof}
+    Воспользуемся теоремами математической логики из модуля \ref{subsec:1.2.1} и определениями вычитания с пересечением
+
+    \begin{align*}
+        & \sphericalangle \; x \in A \backslash (B \cap C) \leftrightarrow \\
+        & x \in A \land x \notin B \cap C \leftrightarrow \\
+        & x \in A \land \neg (x \in B \land x \in C) \leftrightarrow \\
+        & x \in A \land (x \notin B \lor x \notin C) \leftrightarrow \\
+        & (x \in A \land x \notin B) \lor (x \in A \land x \notin C) \leftrightarrow \\
+        & (x \in A \backslash B) \lor (x \in A \backslash C) \leftrightarrow \\
+        & x \in (A \backslash B) \cup (A \backslash C)
+    \end{align*}
+\end{proof}
+
+\begin{theorem}[Коммуникативность объединения]
+    $A \cup B = B \cup A$
+\end{theorem}
+
+\begin{proof}
+    Воспользуемся теоремами математической логики из модуля \ref{subsec:1.2.1} и определением объединения
+
+    \begin{align*}
+        & \sphericalangle \; x \in A \cup B \leftrightarrow \\
+        & x \in A \lor x \in B \leftrightarrow \\
+        & x \in B \lor x \in A \leftrightarrow \\
+        & x \in B \cup A \\
+    \end{align*}
+\end{proof}
+
+\begin{theorem}[Ассоциативность объединения]
+    $A \cup (B \cup C) = (A \cup B) \cup C$
+\end{theorem}
+
+\begin{proof}
+    Воспользуемся теоремами математической логики из модуля \ref{subsec:1.2.1} и определением объединения
+
+    \begin{align*}
+        & \sphericalangle \; x \in A \cup (B \cup C) \leftrightarrow \\
+        & x \in A \lor x \in B \cup C \leftrightarrow \\
+        & x \in A \lor x \in B \lor x \in C \leftrightarrow \\
+        & (x \in A \lor x \in B) \lor x \in C \leftrightarrow \\
+        & x \in (A \cup B) \lor x \in C \leftrightarrow \\
+        & x \in (A \cup B) \cup C \\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\begin{theorem}[Дистрибутивность объединения относительно пересечения]
+    \hfill \break \break
+    $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+\end{theorem}
+
+\begin{proof}
+    Воспользуемся теоремами математической логики из модуля \ref{subsec:1.2.1} и определениями пересечения с объединением
+
+    \begin{align*}
+        & \sphericalangle \; x \in A \cup (B \cap C) \leftrightarrow \\
+        & x \in A \lor x \in B \cap C \leftrightarrow \\
+        & x \in A \lor (x \in B \land x \in C) \leftrightarrow \\
+        & (x \in A \lor x \in B) \land (x \in A \lor x \in C) \leftrightarrow \\
+        & (x \in A \cup B) \land (x \in A \cup C) \leftrightarrow \\
+        & x \in (A \cup B) \cap  (A \cup C) \\
+    \end{align*}
+\end{proof}
+
+\begin{theorem}[Вычитание объединения]
+    $A \backslash (B \cup C) = (A \backslash B) \cap (A \backslash C)$
+\end{theorem}
+
+\begin{proof}
+    Воспользуемся теоремами математической логики из модуля \ref{subsec:1.2.1} и определениями вычитания с объединением
+
+    \begin{align*}
+        & \sphericalangle \; x \in A \backslash (B \cup C) \leftrightarrow \\
+        & x \in A \land x \notin B \cup C \leftrightarrow \\
+        & x \in A \land \neg (x \in B \lor x \in C) \leftrightarrow \\
+        & x \in A \land (x \notin B \land x \notin C) \leftrightarrow \\
+        & x \in A \land x \notin B \land x \in A \land x \notin C \leftrightarrow \\
+        & (x \in A \land x \notin B) \land (x \in A \land x \notin C) \leftrightarrow \\
+        & (x \in A \backslash B) \land (x \in A \backslash C) \leftrightarrow \\
+        & x \in (A \backslash B) \cap (A \backslash C)
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    $A \cap A = A$
+\end{theorem}
+
+\begin{theorem}
+    $A \cap \varnothing = \varnothing$
+\end{theorem}
+
+\begin{theorem}
+    $A \backslash \varnothing = A$
+\end{theorem}
+
+\begin{theorem}
+    $A \cup A = A$
+\end{theorem}
+
+\begin{theorem}
+    $A \cup \varnothing = A$
+\end{theorem}
+
+\begin{theorem}
+    $A \backslash A = \varnothing$
+\end{theorem}
+
+\newpage
