@@ -1,0 +1,81 @@
+\section{Кванторы}
+
+\begin{definition}[Квантор общности]
+    Квантором общности называется символ <<$\forall $>> (<<для всех>>, <<для каждого>>, <<для любых>>) который при употреблении перед предикатом $P(x)$
+    превращает его в высказывание $\forall x \; P(x)$ истинное тогда и только тогда, когда $D(P) = T(P)$
+\end{definition}
+
+\begin{example}
+    $\forall x \; x = x$ -- истина
+\end{example}
+
+\begin{example}
+    $\forall x \; x^2 \ge 0$ -- истина
+\end{example}
+
+\begin{example}
+    $\forall a \in \mathbb{Z} \; a \; \vdots \; 2 \rightarrow a \; \vdots \; 4 $ -- ложь
+\end{example}
+
+\begin{definition}[Квантор существования]
+    Квантором существования называется символ <<$\exists $>> (<<найдется>>, <<существует>>,) который при употреблении перед предикатом $P(x)$
+    превращает его в высказывание $\exists x \; P(x)$ истинное тогда и только тогда, когда $T(P) \ne \varnothing $
+\end{definition}
+
+\begin{example}
+    $\exists x \; x = 1$ -- истина
+\end{example}
+
+\begin{example}
+    $\exists x \; x^2 \ge 0$ -- истина
+\end{example}
+
+\begin{example}
+    $\exists a \in \mathbb{Z} \; a \; \vdots \; 2 \rightarrow a \; \vdots \; 4 $ -- истина
+\end{example}
+
+\newpage
+
+\begin{theorem}[Об отрицании высказываний, содержащих кванторы] \label{thm:3.2.7}
+    \hfill \break \break
+    1) $\overline{\forall x \; P(x)} \leftrightarrow \exists x \; \overline{P(x)}$ \\ \\
+    2) $\overline{\exists x \; P(x)} \leftrightarrow \forall x \; \overline{P(x)}$
+\end{theorem}
+
+\begin{proof}
+    (1) \\
+    \begin{align*}
+        &\overline{\forall x \; P(x)} \leftrightarrow \\
+        &\overline{D(P) = T(P)} \leftrightarrow \\
+        &D(P) \ne T(P) \leftrightarrow \\
+        &\exists x \in D(P)\;  x \notin T(P) \leftrightarrow \tag{*} \\
+        &\exists x \in D(\overline{P})\;  x \notin T(P) \leftrightarrow \\
+        &\exists x \in D(\overline{P})\;  x \in T(\overline{P}) \leftrightarrow \tag{**} \\
+        &T(\overline{P}) \ne \varnothing \leftrightarrow \\
+        &\exists x \; \overline{P(x)}
+    \end{align*}
+
+    \textsuperscript{*} $D(P) = D(\overline{P})$
+
+    \textsuperscript{**} если найдется такой $x$, что $x \in T(\overline{P})$, то это значит, что $T(\overline{P})$ не пустое
+\end{proof}
+
+\begin{proof}
+    (2) \\
+    \begin{align*}
+        &\overline{\exists x \; P(x)} \leftrightarrow \\
+        &\overline{T(P) \ne \varnothing} \leftrightarrow \\
+        &T(P) = \varnothing \leftrightarrow \tag{*}\\
+        &T(\overline{P}) = D(P) \leftrightarrow \tag{**} \\
+        &T(\overline{P}) = D(\overline{P}) \leftrightarrow \\
+        &\forall x \; \overline{P(x)}\\
+    \end{align*}
+
+    \textsuperscript{*} если ничего не может превратить предикат в истинное высказывание, значит все значения переменной которые вообще превратят предикат 
+    в высказывание превратят его в ложное высказывание
+
+    
+    \textsuperscript{**} $D(P) = D(\overline{P})$
+\end{proof}
+
+\newpage

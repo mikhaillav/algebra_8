@@ -1,0 +1,39 @@
+\section{Кванторы и двухместные предикаты}
+
+\begin{remark}[Как читаются выражения с двумя кванторами]
+    \hfill
+
+    \begin{enumerate}
+        \item $\forall x \; \forall y$ - для каждого $x$ каждый $y$
+        \item $\forall x \; \exists y$ - для каждого $x$ найдется $y$
+        \item $\exists x \; \forall y$ - найдется $x$, для которого каждый $y$
+        \item $\exists x \; \exists y$ - найдутся такие $x$ и $y$
+    \end{enumerate}
+\end{remark}
+
+\subsection{Как ими пользоваться?}
+
+$P(x; y)$ - предикат, зависящий от $x$ и $y$ \\
+$\forall x \; P(x; y)$ - предикат, зависящий от $y$ \\
+$\exists x \; P(x; y)$ - предикат, зависящий от $y$ \\
+$\forall y \; P(x; y)$ - предикат, зависящий от $x$ \\
+$\exists y \; P(x; y)$ - предикат, зависящий от $x$ \\
+
+$\forall x \; \forall y \; P(x; y)$ - высказывание, зависящие от порядка кванторов \\
+$\forall x \; \exists y \; P(x; y)$ - высказывание, зависящие от порядка кванторов \\
+
+\begin{theorem}[Об отрицании выскзаываний с несколькими кванторами]
+    \hfill \break
+
+    $\overline{\forall x \; \exists y \; \forall z \; P(x; y; z)} \leftrightarrow \exists x \; \forall y \; \exists z \; \overline{P(x; y; z)}$
+\end{theorem}
+
+\begin{proof}
+    Поочередно раскрываем каждый из кванторов согласно теореме \ref{thm:3.2.7}.
+    \begin{align*}
+        &\overline{\forall x \; \exists y \; \forall z \; P(x; y; z)} \leftrightarrow \\
+        &\forall x \; \overline{\exists y \; \forall z \; P(x; y; z)} \leftrightarrow \\
+        &\exists x \; \forall y \; \overline{\forall z \; P(x; y; z)} \leftrightarrow \\
+        &\forall x \; \forall y \; \exists z \;  \overline{P(x; y; z)} \leftrightarrow \\
+    \end{align*}
+\end{proof}
