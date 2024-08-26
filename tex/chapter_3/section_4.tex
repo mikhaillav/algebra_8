@@ -1,0 +1,75 @@
+\section{Следование и равносильность предикатов}
+
+\begin{definition}[Следование предикатов]
+    Говорят, что предикат $Q(x)$ следует ($\Rightarrow$) из предиката $P(x)$, если $\forall x \; Q(x) \rightarrow P(x)$
+\end{definition}
+
+\begin{remark}
+    \hfill
+
+    $Q(x) \rightarrow P(x)$ - предикат \\
+    $Q(x) \Rightarrow P(x)$ - высказывание
+\end{remark}
+
+\begin{definition}[Равносильность предикатов]
+    Говорят, что два предиката $Q(x)$ и $P(x)$ равносильны ($\Leftrightarrow$), если $\forall x \; Q(x) \leftrightarrow P(x)$
+\end{definition}
+
+\begin{theorem}[Следование предикатов в терминах множеств истинности]
+    \hfill
+
+    \begin{center}
+        $Q(x) \Rightarrow P(x)$ тогда и только тогда, когда $T(Q) \subset T(P)$
+    \end{center}
+\end{theorem}
+
+\begin{proof}[Доказательство в одну сторону]
+    Зная, что $Q(x) \Rightarrow P(x)$ нужно доказать, что $T(Q) \subset T(P)$. 
+
+    Если верно $Q(x) \Rightarrow P(x)$, то верно и $\forall x \; Q(x) \rightarrow P(x)$.\\
+    Тогда верно и  $\forall x \in T(Q): \; Q(x) \rightarrow P(x)$. \\
+    Тогда получаем, что импликация верна, а $Q(x)$ - истина. \\
+    Согласно определению \hyperref[def:Импликация]{импликации}, $P(x)$ тоже будет истиной \\
+\end{proof}
+
+\begin{proof}[Доказательство в другую сторону]
+    Зная, что $T(Q) \subset T(P)$ нужно доказать, что $Q(x) \Rightarrow P(x)$. 
+
+    Допустим, $x \in T(Q)$, тогда верно, что $x \in T(P)$. Тогда $Q(x) \rightarrow P(x)$ будет истиной. \\
+    Допустим, $x \notin T(Q)$. Тогда $Q(x) \rightarrow P(x)$ тоже будет истиной. \\ 
+    Мы рассмотрели все возможные $x$, значит можем утверждать, что $\forall x \; Q(x) \rightarrow P(x)$ является правдой.
+    А это значит, что $Q(x) \Rightarrow P(x)$ тоже правда.
+\end{proof}
+
+\begin{theorem}[Равносильность предикатов в терминах множеств истинности]
+    \hfill
+
+    \begin{center}
+        $Q(x) \Leftrightarrow P(x)$ тогда и только тогда, когда $T(Q) = T(P)$
+    \end{center}
+\end{theorem}
+
+\begin{proof}[Доказательство в одну сторону]
+    Зная, что $Q(x) \Leftrightarrow P(x)$ нужно доказать, что $T(Q) = T(P)$. 
+
+    Если верно $Q(x) \Leftrightarrow P(x)$, то верно и $\forall x \; Q(x) \leftrightarrow P(x)$.\\
+    А это, из определения \hyperref[def:Эквиваленция]{эквиваленции}, означает, что если $x$ делает предикат $Q(x)$ истинным, 
+    то он так же делает истинным и предикат $P(x)$. Или наоборот, делает их обоих ложными. Отсюда делаем вывод,
+    что $T(Q) = T(P)$.
+\end{proof}
+
+\begin{proof}[Доказательство в другую сторону]
+    Зная, что $T(Q) = T(P)$ нужно доказать, что $Q(x) \Leftrightarrow P(x)$. 
+
+    Возьмем любой $x$. \\
+    Если $x \in T(Q) \lor x \in T(P)$ то эквиваленция $Q(x) \leftrightarrow P(x)$ будет верна. \\
+    Если $x \notin T(Q) \land x \notin T(P)$ то эквиваленция $Q(x) \leftrightarrow P(x)$ тоже будет верна. \\
+    Случай, когда $x$ попадает только в одно из множеств невозможен, ведь оба множества равны. \\
+    Тогда можем говорить, что $\forall x \; Q(x) \leftrightarrow P(x)$ или же $Q(x) \Leftrightarrow P(x)$
+\end{proof}
+
+\begin{definition}[Достаточное и необходимое условие]
+    Если $A(x) \Rightarrow B(x)$, то условие $A(x)$ называется достаточным для $B(x)$, а условие $B(x)$  необходимым для $A(x)$
+\end{definition}
+
+\newpage

@@ -1,0 +1,35 @@
+\section{Виды теорем}
+
+\begin{definition}
+    Пусть исходная (прямая) теорема это $A(x) \Rightarrow B(x)$, тогда: \\
+    $B(x) \Rightarrow A(x)$ - обратная теорема; \\
+    $\overline{A(x)} \Rightarrow \overline{B(x)}$ - противоположная теорема; \\
+    $\overline{B(x)} \Rightarrow \overline{A(x)}$ - обратная к противоположной теорема.
+\end{definition}
+
+\begin{example}
+    \hfill
+
+    Прямая: $\alpha$ и $\beta$ - вертикальные $\Rightarrow$ они равны \\
+    Обратная: $\alpha$ и $\beta$ - равны $\Rightarrow$ они вертикальные \\
+    Противоположная: $\alpha$, $\beta$ - не вертикальные $\Rightarrow$ они не равны \\ 
+    Обратная к противоположной: $\alpha$, $\beta$ - не равны $\Rightarrow$ они не вертикальные
+\end{example}
+
+\begin{theorem}[О видах теорем]
+    \hfill
+
+    \begin{enumerate}
+        \item Прямая и обратная к противоположной теореме теоремы всегда верны или не верны одновременно.
+        \item Обратная и противоположная теоремы всегда верны или не верны одновременно
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    Согласно свойству импликации \ref{thm:1.3.3}:
+
+    \begin{enumerate}
+        \item $A(x) \Rightarrow B(x) = \forall x \; A(x) \rightarrow B(x) = \forall x \; \overline{B(x)} \rightarrow \overline{A(x)} = \overline{B(x)} \Rightarrow \overline{A(x)}$
+        \item $B(x) \Rightarrow A(x) = \forall x \; B(x) \rightarrow A(x) = \forall x \; \overline{A(x)} \rightarrow \overline{B(x)} = \overline{A(x)} \Rightarrow \overline{B(x)}$
+    \end{enumerate}
+\end{proof}
