@@ -22,6 +22,12 @@ $\exists y \; P(x; y)$ - предикат, зависящий от $x$ \\
 $\forall x \; \forall y \; P(x; y)$ - высказывание, зависящие от порядка кванторов \\
 $\forall x \; \exists y \; P(x; y)$ - высказывание, зависящие от порядка кванторов \\
 
+\begin{example}
+    $P(x; y) = $ <<Человек $x$ родился в год $y$>>. Тогда \\
+    $\forall x \; \exists y \; P(x; y)$ - истина (каждый человек родился в какой-то год) \\
+    $\exists x \; \forall y \; P(x; y)$ - ложь (нет такого человека который родился во все года)
+\end{example}
+
 \begin{theorem}[Об отрицании выскзаываний с несколькими кванторами]
     \hfill \break
 
@@ -37,3 +43,9 @@ $\forall x \; \exists y \; P(x; y)$ - высказывание, зависящи
         &\forall x \; \forall y \; \exists z \;  \overline{P(x; y; z)} \leftrightarrow \\
     \end{align*}
 \end{proof}
+
+\begin{example}
+    $\neg (\forall x \; \exists y \; x + y = 1) \leftrightarrow \exists x \; \forall y \; x + y \neq 1$
+\end{example}
+
+\newpage
